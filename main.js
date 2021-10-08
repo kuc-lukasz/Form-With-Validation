@@ -5,7 +5,15 @@ const btnConfirm = document.querySelector('button')
 
 form.addEventListener("submit", function (e) {
     e.preventDefault()
-    console.log(emailInput.value)
-    console.log(passInput.value)
+    console.log(emailInput)
+    console.log(passInput)
 
+})
+
+emailInput.addEventListener('keyup', ()=> 
+console.log(emailInput.value)
+
+)
+passInput.addEventListener('keyup', ()=> {
+    console.log(passInput.value)
 })
