@@ -1,0 +1,63 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(241, 235, 235);
+    margin: 0;
+}
+.box-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    min-height: 200px;
+    background-color: rgb(77, 75, 75);
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 50px;
+    box-shadow: 2px 4px 10px black;
+}
+#email,
+#pass{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: ;
+    width: 200px;
+    height: 20px;
+    border-radius: 7px;
+    border: gray;
+    padding: 3px;
+    text-align: center;
+}
+button{
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+.box-afterLog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+    min-height: 100px;
+    background-color: rgb(77, 75, 75);
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    box-shadow: 2px 4px 10px black;
+
+}
+.hidden{
+    display: none;
+}
