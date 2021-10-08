@@ -58,6 +58,10 @@ button{
     box-shadow: 2px 4px 10px black;
 
 }
+.user-email,
+.user-password{
+    margin-left: 5px;
+}
 .hidden{
     display: none;
 }

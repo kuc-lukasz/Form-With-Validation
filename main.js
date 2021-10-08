@@ -5,8 +5,14 @@ const btnConfirm = document.querySelector('button')
 
 form.addEventListener("submit", function (e) {
     e.preventDefault()
-    console.log(emailInput)
-    console.log(passInput)
+    const displayEmail = document.querySelector('.user-email')
+    const displayPass = document.querySelector('.user-password')
+    displayEmail.innerText = emailInput.value
+    console.log(passInput.value)
+    displayPass.innerText = passInput.value
+    const boxAfterLog = document.querySelector('.box-afterLog')
+    boxAfterLog.classList.remove('hidden')
+
 
 })
 
