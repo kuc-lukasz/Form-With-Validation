@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-     
-        <form>
-            <div class="box-form">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <div class="box-form">
         <label for="email">Your e-mail</label>
-        <input type="email" id="email" name="email" placeholder="Write e-mail...">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Write e-mail..."
+        />
         <label for="pass">Your password</label>
-        
-        <input type="password" id="pass" name="pass" placeholder="Write password">
+
+        <input
+          type="password"
+          id="pass"
+          name="pass"
+          placeholder="Write password"
+        />
 
         <button>Confirm</button>
-    </div>
+      </div>
     </form>
-    
-    <div class="box-afterLog">
 
+    <div class="box-afterLog">
+        <p>E-mail:<span class="user-email"></span></p>
+        <p>Password:<span class="user-password"></span></p>
     </div>
-</body>
+  </body>
 </html>
