@@ -5,6 +5,16 @@ const btnConfirm = document.querySelector('button')
 
 form.addEventListener("submit", function (e) {
     e.preventDefault()
+    if (emailInput.value === ""){
+        emailInput.classList.add('red')
+        return
+    } if (passInput.value === ""){
+        passInput.classList.add('red')
+        return
+
+    }
+
+    
     const displayEmail = document.querySelector('.user-email')
     const displayPass = document.querySelector('.user-password')
     displayEmail.innerText = emailInput.value
