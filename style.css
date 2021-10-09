@@ -33,6 +33,8 @@ body{
     border-radius: 7px;
     padding: 3px;
     text-align: center;
+    -webkit-appearance: none;
+    outline:none;
 }
 button{
     background-color: white;
@@ -66,5 +68,17 @@ button{
 }
 .red {
     border: 3px solid red;
+    -webkit-appearance: none;
+    outline:none;
 
 }
+
+.information-wrong-email,
+.information-wrong{
+    color: red;
+    font-weight: 500;
+    margin-top: -25px;
+    margin-bottom: 20px;
+   
+}
+
