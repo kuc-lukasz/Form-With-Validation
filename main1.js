@@ -10,7 +10,17 @@ const credentialContainer = document.querySelector(".box-afterLog");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  dataAfterSubmit(email, password);
+
+  const passIsLogicValue = !!password.value;
+  const emailIsLogicValue = !!email.value;
+
+  if (passIsLogicValue && emailIsLogicValue) {
+    dataAfterSubmit(email, password);
+  } else {
+    
+    validation(email, wrongEmailInfo, email.value);
+    validation(password, wrongPassInfo, password.value);
+  }
 });
 
 function dataAfterSubmit(email, password) {
@@ -19,7 +29,25 @@ function dataAfterSubmit(email, password) {
 
   if (credentialContainer.classList.contains("hidden")) {
     credentialContainer.classList.remove("hidden");
-    emailDisplay.innerText = email.value;
-    passwordDisplay.innerText = password.value;
+  }
+  emailDisplay.innerText = email.value;
+  passwordDisplay.innerText = password.value;
+}
+
+email.addEventListener("keyup", (e) => {
+  validation(email, wrongEmailInfo, e.target.value);
+});
+
+password.addEventListener("keyup", (e) => {
+  validation(password, wrongPassInfo, e.target.value);
+});
+
+function validation(emailOrPass, alert, currentValue) {
+  if (currentValue != "") {
+    emailOrPass.classList.remove("border");
+    alert.classList.add("hidden");
+  } else {
+    emailOrPass.classList.add("border");
+    alert.classList.remove("hidden");
   }
 }

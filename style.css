@@ -81,19 +81,24 @@ button{
 .hidden{
     display: none;
 }
-.red {
+.border {
     border: 3px solid red;
     -webkit-appearance: none;
     outline:none;
-
 }
 
-.information-wrong-email,
-.information-wrong{
+.wrong-email,
+.wrong-pass{
     color: red;
     font-weight: 500;
     margin-top: -25px;
     margin-bottom: 20px;
    
+}
+.inputsBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
