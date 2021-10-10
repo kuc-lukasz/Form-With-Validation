@@ -7,37 +7,44 @@
     <title>Document</title>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
     <form>
-      <div class="box-form">
-        
-
-        <label for="email">Your e-mail</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Write e-mail..."
-        />
-        <div class="information-wrong-email"></div>
-
-        <label for="pass">Your password</label>
-        <input
-          type="password"
-          id="pass"
-          name="pass"
-          placeholder="Write password"
-        />
-        <div class="information-wrong"></div>
-
-        <button>Confirm</button>
+      <div class="inputsBox">
+        <label for="email"
+          >Your e-mail
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Write e-mail..."
+          />
+        </label>
+        <p class="wrong-email hidden">Write correct e-mail addres</p>
       </div>
+
+      <div class="inputsBox">
+        <label for="pass"
+          >Your password
+          <input
+            type="password"
+            id="pass"
+            name="pass"
+            placeholder="Write password"
+          />
+        </label>
+        <p class="wrong-pass hidden">Write correct password</p>
+      </div>
+
+      <button>Confirm</button>
     </form>
 
     <div class="box-afterLog hidden">
-        <p>E-mail:<span class="user-email"></span></p>
-        <p>Password:<span class="user-password"></span></p>
+      <p>E-mail:<span class="user-email"></span></p>
+      <p>Password:<span class="user-password"></span></p>
     </div>
   </body>
 </html>

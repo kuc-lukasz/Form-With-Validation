@@ -7,8 +7,10 @@ body{
     flex-direction: column;
     background-color: rgb(241, 235, 235);
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
-.box-form{
+form,
+.box-afterLog{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,12 +18,18 @@ body{
     width: 300px;
     min-height: 200px;
     background-color: rgb(77, 75, 75);
-    border: 1px solid gray;
     border-radius: 20px;
     padding: 20px;
     color: white;
     margin-bottom: 50px;
     box-shadow: 2px 4px 10px black;
+}
+.inputBox,
+label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 #email,
 #pass{
@@ -44,7 +52,7 @@ button{
     border-radius: 10px;
 }
 
-.box-afterLog{
+/* .box-afterLog{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,9 +64,9 @@ button{
     border-radius: 20px;
     padding: 20px;
     color: white;
-    box-shadow: 2px 4px 10px black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.616);
 
-}
+} */
 .user-email,
 .user-password{
     margin-left: 5px;
