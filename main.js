@@ -1,64 +1,73 @@
 const form = document.querySelector("form");
-const emailInput = document.querySelector("#email");
-const passInput = document.querySelector("#pass");
-const btnConfirm = document.querySelector("button");
+
+const email = document.querySelector("#email");
+const wrongEmailInfo = document.querySelector(".wrong-email");
+
+const password = document.querySelector("#pass");
+const wrongPassInfo = document.querySelector(".wrong-pass");
+
+const credentialContainer = document.querySelector(".box-afterLog");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  if (emailInput.value === "") {
-    emailInput.classList.add("red");
-    const alert = document.createElement("div");
-    alert.innerText = "To pole jest wymagane";
-    const boxEmail = document.querySelector(".information-wrong-email");
-    boxEmail.appendChild(alert);
 
-    return;
-  }
-  if (passInput.value === "") {
-    passInput.classList.add("red");
-    const alert = document.createElement("div");
-    alert.innerText = "To pole jest wymagane";
-    const boxEmail = document.querySelector(".information-wrong");
-    boxEmail.appendChild(alert);
+  const passIsLogicValue = !!password.value;
+  const emailIsLogicValue = !!email.value;
+  const passwordLen = document.querySelector("#pass").value;
+  const passLengthDisplay = document.querySelector(".pass-length")
 
-    return;
-  } else{
-
-  const displayEmail = document.querySelector(".user-email");
-  const displayPass = document.querySelector(".user-password");
-  displayEmail.innerText = emailInput.value;
-  console.log(passInput.value);
-  displayPass.innerText = passInput.value;
-  const boxAfterLog = document.querySelector(".box-afterLog");
-  boxAfterLog.classList.remove("hidden");
-  }
-});
-
-emailInput.addEventListener("keyup", () => {
-  if (emailInput.value === "") {
-    console.log(emailInput.value);
-    emailInput.classList.add("red");
-    const alert = document.createElement("div");
-    alert.innerText = "To pole jest wymagane";
-    const boxEmail = document.querySelector(".information-wrong-email");
-    boxEmail.appendChild(alert);
-
+  if (passwordLen.length < 6) {
+    password.classList.add("border");
+    passLengthDisplay.classList.remove("hidden");
+    
+  } else if (passIsLogicValue && emailIsLogicValue) {
+    dataAfterSubmit(email, password);
   } else {
-    emailInput.classList.remove("red");
+    validation(email, wrongEmailInfo, email.value);
+    validation(password, wrongPassInfo, password.value, password.value);
   }
 });
 
-passInput.addEventListener("keyup", () => {
-  if (passInput.value === "") {
-    passInput.classList.add("red");
-    const alert = document.createElement("div");
-    alert.innerText = "To pole jest wymagane";
-    const boxEmail = document.querySelector(".information-wrong");
-    boxEmail.appendChild(alert);
+function dataAfterSubmit(email, password) {
+  const emailDisplay = document.querySelector(".user-email");
+  const passwordDisplay = document.querySelector(".user-pass");
 
-    return;
+  if (credentialContainer.classList.contains("hidden")) {
+    credentialContainer.classList.remove("hidden");
+  }
+  emailDisplay.innerText = email.value;
+  passwordDisplay.innerText = password.value;
+}
+
+email.addEventListener("keyup", (e) => {
+  validation(email, wrongEmailInfo, e.target.value);
+});
+
+password.addEventListener("keyup", (e) => {
+  validation(password, wrongPassInfo, e.target.value);
+  passwordLength(password, password.value)
+});
+
+function validation(emailOrPass, alert, currentValue) {
+  if (currentValue != "") {
+    emailOrPass.classList.remove("border");
+    alert.classList.add("hidden");
   } else {
-    passInput.classList.remove("red");
+    emailOrPass.classList.add("border");
+    alert.classList.remove("hidden");
   }
-  console.log(passInput.value);
-});
+}
+
+function passwordLength(pass, passCurrent) {
+
+  const passLengthDisplay = document.querySelector(".pass-length");
+
+  if (passCurrent.length > 6) {
+    pass.classList.remove("border");
+    passLengthDisplay.classList.add("hidden");
+    
+  } else {
+    pass.classList.add("border");
+    passLengthDisplay.classList.remove("hidden");
+  }
+}
