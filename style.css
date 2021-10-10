@@ -88,12 +88,14 @@ button{
 }
 
 .wrong-email,
-.wrong-pass{
+.wrong-pass,
+.pass-length{
     color: red;
     font-weight: 500;
-    margin-top: -25px;
+    margin-top: -20px;
     margin-bottom: 20px;
-   
+    
+    text-align: center;
 }
 .inputsBox{
     display: flex;

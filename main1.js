@@ -13,13 +13,18 @@ form.addEventListener("submit", function (e) {
 
   const passIsLogicValue = !!password.value;
   const emailIsLogicValue = !!email.value;
+  const passwordLen = document.querySelector("#pass").value;
+  const passLengthDisplay = document.querySelector(".pass-length")
 
-  if (passIsLogicValue && emailIsLogicValue) {
+  if (passwordLen.length < 6) {
+    password.classList.add("border");
+    passLengthDisplay.classList.remove("hidden");
+    
+  } else if (passIsLogicValue && emailIsLogicValue) {
     dataAfterSubmit(email, password);
   } else {
-    
     validation(email, wrongEmailInfo, email.value);
-    validation(password, wrongPassInfo, password.value);
+    validation(password, wrongPassInfo, password.value, password.value);
   }
 });
 
@@ -40,6 +45,7 @@ email.addEventListener("keyup", (e) => {
 
 password.addEventListener("keyup", (e) => {
   validation(password, wrongPassInfo, e.target.value);
+  passwordLength(password, password.value)
 });
 
 function validation(emailOrPass, alert, currentValue) {
@@ -49,5 +55,19 @@ function validation(emailOrPass, alert, currentValue) {
   } else {
     emailOrPass.classList.add("border");
     alert.classList.remove("hidden");
+  }
+}
+
+function passwordLength(pass, passCurrent) {
+
+  const passLengthDisplay = document.querySelector(".pass-length");
+
+  if (passCurrent.length > 6) {
+    pass.classList.remove("border");
+    passLengthDisplay.classList.add("hidden");
+    
+  } else {
+    pass.classList.add("border");
+    passLengthDisplay.classList.remove("hidden");
   }
 }
