@@ -9,20 +9,28 @@ body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+form {
+    width: 300px;
+    min-height: 200px;
+
+}
 form,
 .box-afterLog{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 300px;
-    min-height: 200px;
     background-color: rgb(77, 75, 75);
     border-radius: 20px;
     padding: 20px;
     color: white;
     margin-bottom: 50px;
     box-shadow: 2px 4px 10px black;
+}
+
+.box-afterLog{
+    width: 200px;
+    min-height: 80px;
 }
 .inputBox,
 label{
@@ -35,7 +43,6 @@ label{
 #pass{
     margin-top: 10px;
     margin-bottom: 30px;
-    border-radius: ;
     width: 200px;
     height: 20px;
     border-radius: 7px;
@@ -68,7 +75,7 @@ button{
 
 } */
 .user-email,
-.user-password{
+.user-pass{
     margin-left: 5px;
 }
 .hidden{
